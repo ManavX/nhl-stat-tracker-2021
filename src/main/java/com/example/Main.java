@@ -467,6 +467,10 @@ public class Main {
             sessionID.add(rs.getInt("id"));
             request.getSession().setAttribute("MY_SESSION_ID", sessionID);
           }
+          System.out.println(rs.getArray("favids"));
+          if(rs.getArray("favids")==null){
+            stmt.executeUpdate("UPDATE users SET favids = '{}' WHERE id = "+sessionID.get(0)+"");
+          }
           return "redirect:/home";
         }
         if (user.getUsername().equals(rs.getString("username")) && user.getPassword().equals(rs.getString("password")) && rs.getInt("status") == 1) { 
