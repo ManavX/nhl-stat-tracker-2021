@@ -215,7 +215,7 @@ public class Main {
           int helper = rs.getInt("favamount");
           //int[helper] = rs.getArray("favids");
           // int[helper] = rs.getArray("favids");
-          stmt.executeUpdate("UPDATE users SET favids = '{NULL}' WHERE ID = "+temp+"");
+          stmt.executeUpdate("UPDATE users SET favids = '{}' WHERE ID = "+temp+"");
           System.out.println("past the first execute update");
           stmt.executeUpdate("UPDATE users SET favamount = "+0+" WHERE ID = "+temp+"");
           return "redirect:/profile";
