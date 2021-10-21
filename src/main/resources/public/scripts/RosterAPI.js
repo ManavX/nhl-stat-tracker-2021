@@ -30,7 +30,7 @@ $.getJSON("https://statsapi.web.nhl.com/api/v1/teams/"+teamNum+"/roster", functi
     for(var k = 0;k<tableLength;k++){
         if(k<data.roster.length){
             console.log("http://nhl.bamcontent.com/images/headshots/current/168x168/"+playerID[k]+".jpg")
-            document.getElementById("player"+k).src="http://nhl.bamcontent.com/images/headshots/current/168x168/"+playerID[k]+".jpg";
+            document.getElementById("player"+k).src="https://nhl.bamcontent.com/images/headshots/current/168x168/"+playerID[k]+".jpg";
         }
     }
 

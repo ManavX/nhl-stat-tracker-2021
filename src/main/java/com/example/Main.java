@@ -156,10 +156,10 @@ public class Main {
  
     //code here
     int idInt = Integer.parseInt(id);
-
+    System.out.println("this is the id");
     ArrayList<Integer> sessionID = (ArrayList<Integer>) request.getSession().getAttribute("MY_SESSION_ID");
     if (sessionID == null) {
-      //System.out.println("returning false!");
+      System.out.println("returning false! qiwgfqwhroqwuohwqf");
       return "error";
     }
 
