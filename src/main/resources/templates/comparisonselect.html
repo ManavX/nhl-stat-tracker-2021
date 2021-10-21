@@ -53,8 +53,9 @@
 
 
 
-    <input onclick="showGraphs()" type="submit" id="narutouzumaki" class="btn btn-primary" value="compare these two!" style="margin-top: 25px; margin-left: 25px">
-
+    <input onclick="showGraphs(), disabled=true" type="submit" id="narutouzumaki" class="btn btn-primary" value="Compare these two!" style="margin-top: 25px; margin-left: 25px">
+    <a href=/comparisonselect type="submit" id="hinata" class="btn btn-primary float-right" style="margin-top: 25px; margin-left: 25px">Refresh</a>
+  
    
     <div class="card-body">
       <canvas id="chBar"></canvas>
@@ -89,7 +90,6 @@
           let stat1 = data.stats[0].splits[0].stat;
           player1data.push(stat1.assists);
           player1data.push(stat1.goals);
-          player1data.push(stat1.pim);
           player1data.push(stat1.shots);
           player1data.push(stat1.games);
           player1data.push(stat1.powerPlayGoals);
@@ -108,7 +108,6 @@
           let stat2 = data.stats[0].splits[0].stat;
           player2data.push(stat2.assists);
           player2data.push(stat2.goals);
-          player2data.push(stat2.pim);
           player2data.push(stat2.shots);
           player2data.push(stat2.games);
           player2data.push(stat2.powerPlayGoals);
@@ -130,7 +129,7 @@
             new Chart(chBar, {
             type: 'bar',
             data: {
-            labels: ["assists", "goals", "pim", "shots", "games", "powerPlayGoals", "powerPlayPoints", "penaltyMinutes", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "plusMinus", "points"],
+            labels: ["assists", "goals", "shots", "games", "powerPlayGoals", "powerPlayPoints", "penaltyMinutes", "shotPct", "gameWinningGoals", "overTimeGoals", "shortHandedGoals", "shortHandedPoints", "plusMinus", "points"],
             datasets: [{
                 label: name1,
                 data: player1data,
